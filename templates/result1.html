@@ -1,0 +1,57 @@
+<!-- result.html (Frontend - Result Page) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL & PATH Checker Result</title>
+    <style>
+	body {
+        background-image: url({{url_for('static', filename='photo.jpg')}});
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+        .container {
+            margin-top: 50px;
+            text-align: center;
+        }
+        .result {
+            font-size: 24px;
+            font-weight: bold;
+        }
+		.back-btn {
+			position: fixed;  /* Fixed position to keep it in the same place even when scrolling */
+			top: 20px;  /* Distance from the top */
+			left: 20px;  /* Distance from the right */
+			background-color: green;
+			border: left;
+			color: black;
+			padding: 10px 20px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			cursor: pointer;
+			border-radius: 5px;
+		}
+
+		.back-btn:hover {
+			background-color: white;
+		}
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <h2>PE File Checker</h2>
+        <p class="detect">The file is predicted to be: {{ prediction}}</p>
+		 
+	<div>
+		<form action="/index" method="GET">
+            <button class="back-btn" type="submit">Back to index Page</button>
+        </form>
+		</div>
+</body>
+</html>

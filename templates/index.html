@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Checker</title>
+    <style>
+	
+	body {
+        background-image: url({{url_for('static', filename='Banner-https.png')}});
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+	
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 80vh;
+        }
+        form {
+            margin-top: 0px;
+        }
+		.back-btn {
+			position: fixed;  /* Fixed position to keep it in the same place even when scrolling */
+			top: 20px;  /* Distance from the top */
+			left: 20px;  /* Distance from the right */
+			background-color: light yellow;
+			border: left;
+			color: black;
+			padding: 10px 20px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			cursor: pointer;
+			border-radius: 5px;
+		}
+
+		.back-btn:hover {
+			background-color: gray;
+		}
+        }
+		 h1 {
+            color:  red; /* Change color of h1 */
+        }
+        h2 {
+            color:  red ; /* Change color of h2 */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>URL Checker</h1>
+        <form action="/result" method="post">
+            <label for="url">Enter URL:</label><br>
+            <input type="text" id="url" name="url"><br><br>
+            <input type="submit" value="Check URL">
+        </form>
+    
+        <h2>PE File Checker</h2>
+        <form action="/detect" method="post">
+            <label for="file_path">Enter filename:</label><br>
+            <input type="text" id="file_path" name="file_path"><br><br>
+            <input type="submit" value="Check file">
+			
+        </form>
+		<div>
+		<form action="/login" method="GET">
+            <button class="back-btn" type="submit">Back to Login Page</button>
+        </form>
+		</div>
+		
+    </div>
+</body>
+</html>
